@@ -2,7 +2,11 @@
 
 import * as React from 'react';
 
-export default class TodoApp extends React.Component {
+type Props = {};
+
+type State = {};
+
+export default class TodoApp extends React.Component<Props, State> {
   componentDidMount() {
     this.props.fetchTodos();
   }
@@ -10,9 +14,9 @@ export default class TodoApp extends React.Component {
   render() {
     return (
       <div className="TodoApp">
-        <h1>Title</h1>
+        <h1>TodoList</h1>
         <ul>
-          {[{ title: 'a' }].map(todo => (
+          {this.props.todos.map(todo => (
             <li>{todo.title}</li>
           ))}
         </ul>

@@ -6,17 +6,21 @@ import TodoApp from '/src/components/todo';
 import TodoStore from '/src/flux-infra/stores/todo';
 import { fetchTodos } from '/src/flux-infra/actions/todo';
 
-class TodoAppContainer extends React.Component {
+type State = {};
+
+class TodoAppContainer extends React.Component<void, State> {
   static getStores() {
     return [TodoStore];
   }
 
   static calculateState() {
-    return {};
+    return {
+      ...TodoStore.getState()
+    };
   }
 
   render() {
-    return <TodoApp fetchTodos={fetchTodos} />;
+    return <TodoApp todos={this.state.todos} fetchTodos={fetchTodos} />;
   }
 }
 

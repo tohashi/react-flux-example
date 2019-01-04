@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html --open",
+    "start": "parcel index.html --open & json-server --watch db.json --port 1235",
     "flow": "flow"
   },
   "repository": {
@@ -14,14 +14,18 @@
   "author": "tohashi",
   "license": "ISC",
   "dependencies": {
+    "axios": "0.18.0",
     "flux": "3.1.3",
     "react": "16.7.0",
-    "react-dom": "16.7.0",
-    "src": "^1.1.2"
+    "react-dom": "16.7.0"
   },
   "devDependencies": {
+    "@babel/core": "7.2.2",
+    "@babel/plugin-transform-runtime": "7.2.0",
+    "@babel/preset-flow": "7.0.0",
+    "@babel/preset-react": "7.0.0",
     "flow-bin": "0.89.0",
-    "parcel-bundler": "1.11.0",
-    "sass": "^1.15.2"
+    "json-server": "0.14.2",
+    "parcel-bundler": "1.11.0"
   }
 }

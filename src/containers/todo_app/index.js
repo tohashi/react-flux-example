@@ -2,7 +2,9 @@
 
 import * as React from 'react';
 import { Container } from 'flux/utils';
+import TodoApp from '/src/components/todo';
 import TodoStore from '/src/flux-infra/stores/todo';
+import { fetchTodos } from '/src/flux-infra/actions/todo';
 
 class TodoAppContainer extends React.Component {
   static getStores() {
@@ -14,16 +16,7 @@ class TodoAppContainer extends React.Component {
   }
 
   render() {
-    return (
-      <div className="TodoAppContainer">
-        <h1>Title</h1>
-        <ul>
-          {[{ title: 'a' }].map(todo => (
-            <li>{todo.title}</li>
-          ))}
-        </ul>
-      </div>
-    );
+    return <TodoApp fetchTodos={fetchTodos} />;
   }
 }
 
